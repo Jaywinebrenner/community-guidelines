@@ -1,5 +1,5 @@
-"use client"
-import React, { useEffect, useState } from 'react'
+"use client";
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const Home = () => {
@@ -49,6 +49,7 @@ const Home = () => {
   ];
 
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [blackScreenVisible, setBlackScreenVisible] = useState(true);
 
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
@@ -56,6 +57,10 @@ const Home = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    setTimeout(() => {
+      setBlackScreenVisible(false);
+    }, 2000); // Fade out after 2 seconds
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -63,7 +68,8 @@ const Home = () => {
 
   return (
     <div className='home'>
-        <div className='global-texture'></div>
+      {blackScreenVisible && <div className='black-screen'></div>}
+      <div className='global-texture'></div>
       <div className='contact-button-wrapper' style={{ transform: `rotate(${rotation}deg)` }}>
         <a href="/contact">CONTACT</a>
       </div>
@@ -94,4 +100,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

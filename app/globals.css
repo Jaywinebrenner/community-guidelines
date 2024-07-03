@@ -40,12 +40,32 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li {
   letter-spacing: 8px;
   color: white;
 }
-@media (min-width: 1550px) {
+@media (min-width: 1692px) {
   .landing-wrapper h1  {
     font-size: 15rem; 
   }
 }
+@media (max-width: 1691px) {
+  .landing-wrapper h1  {
+    font-size: 12rem; 
+  }
+}
+@media (max-width: 1400px) {
+  .landing-wrapper h1  {
+    font-size: 10rem; 
+  }
+}
 @media (max-width: 1200px) {
+  .landing-wrapper h1  {
+    font-size: 8rem; 
+  }
+}
+@media (max-width: 930px) {
+  .landing-wrapper h1  {
+    font-size: 7rem; 
+  }
+}
+@media (max-width: 825px) {
   .landing-wrapper h1  {
     font-size: 6rem; 
   }
@@ -71,6 +91,31 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li {
   justify-content: center;
   align-items: center;
 }
+
+
+.black-screen {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url('/img/glitch.gif'); /* Set the background image */
+  background-size: cover; /* Ensure the image covers the entire screen */
+  background-position: center; /* Center the image */
+  z-index: 200;
+  animation: fadeOut 3s ease-out forwards; /* Adjusted animation */
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden; 
+  }
+}
+
+
 
 
 
@@ -211,8 +256,19 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li {
   grid-template-columns: repeat(2, 1fr); 
   gap: 50px; 
   justify-content: center; 
-margin-top: 100px;
+  margin-top: 100px;
+  opacity: 0;
+  animation: fadeIn 7s ease-out forwards; 
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 900px) {
   .records {
     grid-template-columns: 1fr; 
