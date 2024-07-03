@@ -1,8 +1,15 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Landing() {
   const [isAnimating, setIsAnimating] = useState(false);
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    // Preload the audio file
+    audioRef.current = new Audio('/audio/static.mp3');
+    audioRef.current.load();
+  }, []);
 
   const handleClick = () => {
     setIsAnimating(true);
@@ -20,8 +27,10 @@ export default function Landing() {
   }, [isAnimating]);
 
   const playStaticSound = () => {
-    const audio = new Audio('/audio/static.mp3');
-    audio.play();
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0; // Reset to the beginning in case it was played before
+      audioRef.current.play();
+    }
   };
 
   return (
