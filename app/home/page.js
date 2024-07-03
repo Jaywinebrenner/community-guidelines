@@ -35,7 +35,7 @@ const Home = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const rotation = scrollPosition * 0.05; 
+  const rotation = scrollPosition * 0.005; 
 
   return (
     <div className='home'>

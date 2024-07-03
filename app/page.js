@@ -20,7 +20,7 @@ export default function Landing() {
   }, [isAnimating]);
 
   const playStaticSound = () => {
-    const audio = new Audio('/audio/static.wav');
+    const audio = new Audio('/audio/static.mp3');
     audio.play();
   };
 
