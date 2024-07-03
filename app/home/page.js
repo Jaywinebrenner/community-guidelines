@@ -22,6 +22,18 @@ const Home = () => {
       img: "/albums/colonies.jpg" ,
       soldOut: true
     },
+    {
+        band: "Grayson Wilkins Jr.",
+        album: "Newport",
+        img: "/albums/grayson.jpg" ,
+        soldOut: true
+    },
+    {
+        band: "Main Squeeze",
+        album: "Summer Solstice",
+        img: "/albums/main-squeeze.webp" ,
+        soldOut: true
+    },
   ];
 
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -45,7 +57,7 @@ const Home = () => {
       </div>
       <div className='container'>
         <div className='hero'>
-          <h2>welcome to</h2> 
+          <h2>this is</h2> 
           <h1>community guidelines</h1>
         </div>
         <div className='records'>

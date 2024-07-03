@@ -10,7 +10,7 @@ const Contact = () => {
         <div className='container'>
         <div className='global-texture'></div>
             <div className='hero'>
-                <h2>welcome to</h2> 
+                <h2>this is</h2> 
                 <h1>community guidelines</h1>
             </div>
             <div className='contact-form'>
