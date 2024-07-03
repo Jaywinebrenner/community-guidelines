@@ -8,6 +8,7 @@ const Contact = () => {
         </div>
 
         <div className='container'>
+        <div className='global-texture'></div>
             <div className='hero'>
                 <h2>CONTACT</h2> 
                 <h1>COMMUNITY GUIDELINES</h1>

@@ -320,3 +320,23 @@ margin-top: 100px;
 .submit-button:hover {
   background-color: #333;
 }
+
+
+.global-texture {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: overlay;
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 100;
+  background-repeat: repeat;
+  opacity: 1;
+  background-size: 500px auto;
+  background-image: url("/noise-texture-sm.jpg");
+
+}

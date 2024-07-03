@@ -39,6 +39,7 @@ const Home = () => {
 
   return (
     <div className='home'>
+        <div className='global-texture'></div>
       <div className='contact-button-wrapper' style={{ transform: `rotate(${rotation}deg)` }}>
         <a href="/contact">CONTACT</a>
       </div>
