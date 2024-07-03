@@ -1,33 +1,241 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding: 0;
+  margin: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+h1, h2, h3, h4, h5, h6, p, a, ul, li {
+  color: rgb(82, 75, 75);
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 10%;
+}
+
+.landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/img/gate.jpg');
+  background-size: cover;
+  background-position: center;
+  transition: background-color 1s ease;
+}
+
+.landing a {
+  cursor: pointer;
+}
+
+.landing.flash-animation {
+  background-image: none;
+}
+
+.landing-wrapper h1 {
+  font-family: monospace;
+  font-size: 9rem;
+  margin: 0;
+  letter-spacing: 8px;
+  color: white;
+}
+
+.landing-wrapper {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.animated-text {
+  display: inline-block;
+  position: relative;
+}
+
+.text-flash-animation {
+  animation: color-change 0.5s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: #ff7300;
   }
+  20% {
+    color: #00fff7;
+  }
+  40% {
+    color: #8400ff;
+  }
+  60% {
+    color: #90fe00;
+  }
+  80% {
+    color: #ff00a1;
+  }
+  100% {
+    color: #0015ff;
+  }
+}
+
+.flash-animation {
+  animation: flash-colors 1s infinite, fade-out 3s forwards 3s;
+}
+
+@keyframes flash-colors {
+  0% {
+    background-color: #ff7300;
+  }
+  20% {
+    background-color: #00fff7;
+  }
+  40% {
+    background-color: #8400ff;
+  }
+  60% {
+    background-color: #90fe00;
+  }
+  80% {
+    background-color: #ff00a1;
+  }
+  100% {
+    background-color: #0015ff;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.home {
+  background-color: #E7E7E7;
+  min-height: 100vh;
+}
+
+.home .container {
+  padding-bottom: 100px;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 3px solid black
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: rgb(82, 75, 75);
+  margin: 0;
+}
+
+.hero h1 {
+  font-family: monospace;
+  font-size: 5rem;
+  color: rgb(82, 75, 75);
+  margin: 0;
+}
+
+.records {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 50px; 
+  justify-content: center; 
+margin-top: 100px;
+}
+
+.record {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(82, 75, 75);
+  text-decoration: none;
+}
+
+.record img {
+  width: 100%;
+  height: auto; 
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.record p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.record-info {
+
+}
+.sold-out {
+  color: maroon;
+  margin-top: 0!important;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.record-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.record-page img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.record-page h2 {
+  font-family: monospace;
+  font-size: 3rem;
+  margin: 20px 0;
+  color: rgb(82, 75, 75);
+}
+
+.record-page p {
+  font-size: 1.2rem;
+  color: rgb(82, 75, 75);
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgb(82, 75, 75);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #333;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.contact-button-wrapper {
+  position: fixed;
+  background: rgb(82, 75, 75);
+  padding: 10px;
+  right: 10%;
+  top: 60px;
+  transform-origin: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-button-wrapper a {
+  color: white;
+  text-decoration: none;
+  font-family: monospace;
 }
