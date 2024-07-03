@@ -196,6 +196,7 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li {
 
 .hero {
   text-align: center;
+  position: relative;
   padding: 40px 0;
   border-bottom: 3px solid rgb(82, 75, 75);
   border-top: 3px solid rgb(82, 75, 75);
@@ -352,11 +353,11 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li {
 }
 
 .contact-button-wrapper {
-  position: fixed;
+  position: absolute;
   background: rgb(82, 75, 75);
   padding: 10px;
-  right: 10%;
-  top: 30px;
+  right: 0;
+  top: 0;
   transform-origin: center;
   transition: transform 0.2s ease-in-out;
   width: 80px;

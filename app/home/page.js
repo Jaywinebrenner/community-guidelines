@@ -48,33 +48,34 @@ const Home = () => {
     },
   ];
 
-  const [scrollPosition, setScrollPosition] = useState(0);
+  // const [scrollPosition, setScrollPosition] = useState(0);
   const [blackScreenVisible, setBlackScreenVisible] = useState(true);
 
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
+  // const handleScroll = () => {
+  //   setScrollPosition(window.scrollY);
+  // };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    // window.addEventListener('scroll', handleScroll);
     setTimeout(() => {
       setBlackScreenVisible(false);
     }, 2000); // Fade out after 2 seconds
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    // return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const rotation = scrollPosition * 0.005; 
+  // const rotation = scrollPosition * 0.005; 
 
   return (
     <div className='home'>
       {blackScreenVisible && <div className='black-screen'></div>}
       <div className='global-texture'></div>
-      <div className='contact-button-wrapper' style={{ transform: `rotate(${rotation}deg)` }}>
-        <a href="/contact">CONTACT</a>
-      </div>
+
       <div className='container'>
         <div className='hero'>
+          <div className='contact-button-wrapper'>
+            <a href="/contact">CONTACT</a>
+          </div>
           <h2>this is</h2> 
           <h1>community guidelines</h1>
         </div>

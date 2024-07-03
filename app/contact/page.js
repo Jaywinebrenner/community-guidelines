@@ -3,15 +3,16 @@ import React from 'react'
 const Contact = () => {
   return (
     <div className='contact'>
-        <div className='contact-button-wrapper'>
-         <a href="/home">BACK</a>
-        </div>
+
 
         <div className='container'>
         <div className='global-texture'></div>
             <div className='hero'>
-                <h2>this is</h2> 
-                <h1>community guidelines</h1>
+              <div className='contact-button-wrapper'>
+                <a href="/home">BACK</a>
+              </div>
+              <h2>this is</h2> 
+              <h1>community guidelines</h1>
             </div>
             <div className='contact-form'>
               <form action="/api/contact" method="POST">
