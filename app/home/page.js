@@ -29,9 +29,21 @@ const Home = () => {
         soldOut: true
     },
     {
+        band: "Vultus",
+        album: "S/T",
+        img: "/albums/vultus.webp" ,
+        soldOut: true
+    },
+    {
         band: "Main Squeeze",
         album: "Summer Solstice",
         img: "/albums/main-squeeze.webp" ,
+        soldOut: true
+    },
+    {
+        band: "Submission State",
+        album: "Never Adventures with the Blind",
+        img: "/albums/submission-state.webp" ,
         soldOut: true
     },
   ];
