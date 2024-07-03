@@ -10,8 +10,8 @@ const Contact = () => {
         <div className='container'>
         <div className='global-texture'></div>
             <div className='hero'>
-                <h2>CONTACT</h2> 
-                <h1>COMMUNITY GUIDELINES</h1>
+                <h2>welcome to</h2> 
+                <h1>community guidelines</h1>
             </div>
             <div className='contact-form'>
               <form action="/api/contact" method="POST">

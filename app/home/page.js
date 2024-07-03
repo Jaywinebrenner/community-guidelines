@@ -45,8 +45,8 @@ const Home = () => {
       </div>
       <div className='container'>
         <div className='hero'>
-          <h2>WELCOME TO</h2> 
-          <h1>COMMUNITY GUIDELINES</h1>
+          <h2>welcome to</h2> 
+          <h1>community guidelines</h1>
         </div>
         <div className='records'>
           {records.map((record, index) => (
