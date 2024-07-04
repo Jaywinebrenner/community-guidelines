@@ -1,9 +1,8 @@
-// pages/api/send-email.js
 import nodemailer from 'nodemailer';
 
-export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    const { title, message } = req.body;
+export async function POST(request) {
+  try {
+    const { title, message } = await request.json();
 
     // Create a transporter using your Google Workspace email and app password
     const transporter = nodemailer.createTransport({
@@ -21,13 +20,10 @@ export default async function handler(req, res) {
       text: message,
     };
 
-    try {
-      await transporter.sendMail(mailOptions);
-      res.status(200).json({ message: 'Email sent successfully!' });
-    } catch (error) {
-      res.status(500).json({ error: 'Error sending email' });
-    }
-  } else {
-    res.status(405).json({ message: 'Method not allowed' });
+    await transporter.sendMail(mailOptions);
+
+    return new Response(JSON.stringify({ message: 'Email sent successfully!' }), { status: 200 });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: 'Error sending email' }), { status: 500 });
   }
 }
