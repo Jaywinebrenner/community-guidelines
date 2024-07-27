@@ -462,3 +462,66 @@ h1, h2, h3, h4, h5, h6, p, a, ul, li {
   background-image: url("/noise-texture-sm.jpg");
 
 }
+
+.audio-preview-button {
+  background: rgb(82, 75, 75);
+  color: white;
+  font-family: 'Nanum Gothic Coding', monospace;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.audio-preview-button:hover {
+  background-color: maroon;
+}
+
+.audio-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.audio-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+}
+
+.close-button {
+  background: rgba(0, 0, 0, 0.75);
+  color:#E7E7E7;
+  padding: 8px 15px;
+  border: none;
+  font-size: 1rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+.ReactModal__Content--after-open {
+  background-color: #E7E7E7;
+  border-radius: 0;
+}
+
+.audio-player {
+  background-color: #E7E7E7;
+}

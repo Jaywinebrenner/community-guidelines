@@ -1,6 +1,8 @@
-"use client";
+"use client"
+
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Modal from 'react-modal';
 
 const Home = () => {
   const records = [
@@ -19,52 +21,61 @@ const Home = () => {
     {
       band: "Colonies",
       album: "Hack Hymns",
-      img: "/albums/colonies.jpg" ,
+      img: "/albums/colonies.jpg",
       soldOut: true
     },
     {
-        band: "Grayson Wilkins Jr.",
-        album: "Newport",
-        img: "/albums/grayson.jpg" ,
-        soldOut: true
+      band: "Grayson Wilkins Jr.",
+      album: "Newport",
+      img: "/albums/grayson.jpg",
+      soldOut: true,
+      // audioPreview: "/albumAudioPreviews/gary-wilkins.mp3"
     },
     {
-        band: "Vultus",
-        album: "S/T",
-        img: "/albums/vultus.webp" ,
-        soldOut: true
+      band: "Vultus",
+      album: "S/T",
+      img: "/albums/vultus.webp",
+      soldOut: true
     },
     {
-        band: "Main Squeeze",
-        album: "Summer Solstice",
-        img: "/albums/main-squeeze.webp" ,
-        soldOut: true
+      band: "Main Squeeze",
+      album: "Summer Solstice",
+      img: "/albums/main-squeeze.webp",
+      soldOut: true
     },
     {
-        band: "Submission State",
-        album: "Never Adventures with the Blind",
-        img: "/albums/submission-state.webp" ,
-        soldOut: true
+      band: "Submission State",
+      album: "Never Adventures with the Blind",
+      img: "/albums/submission-state.webp",
+      soldOut: true
+    },
+    {
+      band: "Petulant",
+      album: "S/T",
+      img: "/albums/petulant.webp",
+      soldOut: true
     },
   ];
 
-  // const [scrollPosition, setScrollPosition] = useState(0);
   const [blackScreenVisible, setBlackScreenVisible] = useState(true);
-
-  // const handleScroll = () => {
-  //   setScrollPosition(window.scrollY);
-  // };
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState('');
 
   useEffect(() => {
-    // window.addEventListener('scroll', handleScroll);
     setTimeout(() => {
       setBlackScreenVisible(false);
-    }, 2000); // Fade out after 2 seconds
-
-    // return () => window.removeEventListener('scroll', handleScroll);
+    }, 2000);
   }, []);
 
-  // const rotation = scrollPosition * 0.005; 
+  const openModal = (audioPreview) => {
+    setCurrentAudio(audioPreview);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setCurrentAudio('');
+  };
 
   return (
     <div className='home'>
@@ -81,22 +92,32 @@ const Home = () => {
         </div>
         <div className='records'>
           {records.map((record, index) => (
-            <Link 
-              href={record.soldOut ? '#' : `/record/${index}`} 
-              key={index} 
-              legacyBehavior
-            >
-              <a className={`record ${record.soldOut ? 'disabled' : ''}`}>
-                <img src={record.img} alt={`${record.band} - ${record.album}`} />
-                <div className='record-info'>
-                    <p>{record.band} - {record.album}</p>
-                    {record.soldOut && <p className='sold-out'>SOLD OUT</p>}
-                </div>
-              </a>
-            </Link>
+            <div key={index} className='record'>
+              <img src={record.img} alt={`${record.band} - ${record.album}`} />
+              <div className='record-info'>
+                <p>{record.band} - {record.album}</p>
+                {record.soldOut && <p className='sold-out'>SOLD OUT</p>}
+                {record.audioPreview && (
+                  <button onClick={() => openModal(record.audioPreview)} className="audio-preview-button">
+                    LISTEN
+                  </button>
+                )}
+              </div>
+            </div>
           ))}
         </div>
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Audio Preview"
+        className="audio-modal"
+        overlayClassName="audio-modal-overlay"
+      >
+        <button onClick={closeModal} className="close-button">Close</button>
+        {currentAudio && <audio className='audio-player' controls src={currentAudio} />}
+      </Modal>
     </div>
   )
 }
