@@ -7,6 +7,14 @@ import Modal from 'react-modal';
 const Home = () => {
   const records = [
     {
+      band: "Street Nights",
+      album: "The Long Goodbye",
+      img: "/albums/the-long-goodbye.png",
+      soldOut: false,
+      albumLink: "https://streetnights.bandcamp.com/album/the-long-goodbye",
+      message: "Pre-order Now"
+    },
+    {
       band: "Limerance",
       album: "S/T",
       img: "/albums/limerance.jpg",
@@ -92,20 +100,42 @@ const Home = () => {
         </div>
         <div className='records'>
           {records.map((record, index) => (
-            <div key={index} className='record'>
-              <img src={record.img} alt={`${record.band} - ${record.album}`} />
-              <div className='record-info'>
-                <p>{record.band} - {record.album}</p>
-                {record.soldOut && <p className='sold-out'>SOLD OUT</p>}
-                {record.audioPreview && (
-                  <button onClick={() => openModal(record.audioPreview)} className="audio-preview-button">
-                    LISTEN
-                  </button>
-                )}
+            record.albumLink ? (
+              <a key={index}
+                className='record'
+                href={record.albumLink}
+                target='_blank'
+                style={{ cursor: 'pointer' }}
+              >
+                <img src={record.img} alt={`${record.band} - ${record.album}`} />
+                <div className='record-info'>
+                  <p>{record.band} - {record.album}</p>
+                  {record.soldOut && <p className='sold-out'>SOLD OUT</p>}
+                  {record.message && <p className='sold-out'>PRE-ORDER NOW</p>}
+                  {record.audioPreview && (
+                    <button onClick={() => openModal(record.audioPreview)} className="audio-preview-button">
+                      LISTEN
+                    </button>
+                  )}
+                </div>
+              </a>
+            ) : (
+              <div key={index} className='record' style={{ cursor: 'not-allowed' }}>
+                <img src={record.img} alt={`${record.band} - ${record.album}`} />
+                <div className='record-info'>
+                  <p>{record.band} - {record.album}</p>
+                  {record.soldOut && <p className='sold-out'>SOLD OUT</p>}
+                  {record.audioPreview && (
+                    <button onClick={() => openModal(record.audioPreview)} className="audio-preview-button">
+                      LISTEN
+                    </button>
+                  )}
+                </div>
               </div>
-            </div>
+            )
           ))}
         </div>
+
       </div>
 
       <Modal
