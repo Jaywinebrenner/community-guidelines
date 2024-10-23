@@ -12,7 +12,7 @@ const Home = () => {
       img: "/albums/the-long-goodbye.png",
       soldOut: false,
       albumLink: "https://streetnights.bandcamp.com/album/the-long-goodbye",
-      message: "Pre-order Now"
+      message: "Order Now"
     },
     {
       band: "Limerance",
@@ -111,7 +111,7 @@ const Home = () => {
                 <div className='record-info'>
                   <p>{record.band} - {record.album}</p>
                   {record.soldOut && <p className='sold-out'>SOLD OUT</p>}
-                  {record.message && <p className='sold-out'>PRE-ORDER NOW</p>}
+                  {record.message && <p className='sold-out'>ORDER NOW</p>}
                   {record.audioPreview && (
                     <button onClick={() => openModal(record.audioPreview)} className="audio-preview-button">
                       LISTEN
