@@ -7,6 +7,14 @@ import Modal from 'react-modal';
 const Home = () => {
   const records = [
     {
+      band: "My Family is Gone",
+      album: "Friendly Reminders",
+      img: "/albums/fr.jpg",
+      soldOut: false,
+      albumLink: "https://myfamilyisgone.bandcamp.com/album/friendly-reminders",
+      message: "Order Now"
+    },
+    {
       band: "Street Nights",
       album: "The Long Goodbye",
       img: "/albums/the-long-goodbye.png",
