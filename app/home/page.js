@@ -29,6 +29,14 @@ const Home = () => {
       soldOut: true
     },
     {
+  band: "1 2 3 4 5 6 7 8 9",
+  album: "O Go",
+  img: "/albums/ogo.jpg",
+  soldOut: true,
+  albumLink: "https://123456789band.bandcamp.com/album/o-go",
+
+},
+    {
       band: "Pandra",
       album: "S/T",
       img: "/albums/pandra.jpg",
