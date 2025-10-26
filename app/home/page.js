@@ -7,6 +7,22 @@ import Modal from 'react-modal';
 const Home = () => {
   const records = [
     {
+      band: "Blesst Chest",
+      album: "Goes To Camp",
+      img: "/albums/BC_GTC_Cover.PNG",
+      soldOut: false,
+      albumLink: "",
+      message: "Order Now"
+    },
+        {
+      band: "Street Nights",
+      album: "The Long Goodbye Remixes",
+      img: "/albums/sn_covers.jpeg",
+      soldOut: false,
+      albumLink: "",
+      message: "Order Now"
+    },
+    {
       band: "My Family is Gone",
       album: "Friendly Reminders",
       img: "/albums/fr.jpg",
