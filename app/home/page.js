@@ -11,7 +11,7 @@ const Home = () => {
       album: "Goes To Camp",
       img: "/albums/BC_GTC_Cover.PNG",
       soldOut: false,
-      albumLink: "",
+      albumLink: "https://blesstchest.bandcamp.com/album/blesst-chest-goes-to-camp-2",
       message: "Order Now"
     },
         {
