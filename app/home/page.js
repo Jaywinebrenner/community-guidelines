@@ -6,14 +6,7 @@ import Modal from 'react-modal';
 
 const Home = () => {
   const records = [
-        {
-      band: "1 2 3 4 5 6 7 8 9",
-      album: "I Go",
-      img: "/albums/igo.jpg",
-      soldOut: false,
-      albumLink: "https://123456789band.bandcamp.com/album/i-go?search_item_id%3D2407474865%26search_item_type%3Da%26search_match_part%3D%253F%26search_page_id%3D4982617166%26search_page_no%3D0%26search_rank%3D3=",
-      message: "Order Now"
-    },
+
     {
       band: "Blesst Chest",
       album: "Goes To Camp",
@@ -28,6 +21,14 @@ const Home = () => {
       img: "/albums/sn_covers.jpeg",
       soldOut: false,
       albumLink: "",
+      message: "Order Now"
+    },
+            {
+      band: "1 2 3 4 5 6 7 8 9",
+      album: "I Go",
+      img: "/albums/igo.jpg",
+      soldOut: false,
+      albumLink: "https://123456789band.bandcamp.com/album/i-go?search_item_id%3D2407474865%26search_item_type%3Da%26search_match_part%3D%253F%26search_page_id%3D4982617166%26search_page_no%3D0%26search_rank%3D3=",
       message: "Order Now"
     },
     {
